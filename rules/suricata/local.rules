@@ -1,0 +1,24 @@
+# Home SOC Detection Lab - custom Suricata rules
+# SID range 1000001-1000099 reserved for this lab. Set HOME_NET to the victim subnet.
+# Thresholds are starting points - tune them after testing and record changes in reports/.
+
+# T1046 Network Service Discovery - many SYNs from one source in a short window
+alert tcp any any -> $HOME_NET any (msg:"LAB TCP SYN port scan"; flow:stateless; flags:S,12; threshold:type both, track by_src, count 50, seconds 10; classtype:attempted-recon; metadata:mitre_technique T1046; sid:1000010; rev:1;)
+
+# T1110 Brute Force - repeated new SSH connections from one source
+alert tcp any any -> $HOME_NET 22 (msg:"LAB SSH brute force"; flow:to_server; flags:S,12; threshold:type both, track by_src, count 5, seconds 60; classtype:attempted-admin; metadata:mitre_technique T1110; sid:1000001; rev:2;)
+
+# T1110 Brute Force - repeated new RDP connections from one source
+alert tcp any any -> $HOME_NET 3389 (msg:"LAB RDP brute force"; flow:to_server; flags:S,12; threshold:type both, track by_src, count 10, seconds 60; classtype:attempted-admin; metadata:mitre_technique T1110; sid:1000002; rev:1;)
+
+# T1071.004 DNS tunneling - unusually long encoded label in a DNS query
+alert dns $HOME_NET any -> any any (msg:"LAB DNS long query label - possible tunneling"; dns.query; pcre:"/[a-z0-9\-]{40,}\./i"; threshold:type both, track by_src, count 5, seconds 60; classtype:policy-violation; metadata:mitre_technique T1071.004; sid:1000020; rev:1;)
+
+# T1071.004 DNS tunneling - high DNS query volume from one internal host
+alert dns $HOME_NET any -> any any (msg:"LAB High DNS query rate from single host"; threshold:type both, track by_src, count 200, seconds 60; classtype:policy-violation; metadata:mitre_technique T1071.004; sid:1000021; rev:1;)
+
+# T1105 / T1566 - request for executable or script file over HTTP
+alert http $HOME_NET any -> any any (msg:"LAB HTTP request for executable or script file"; flow:established,to_server; http.uri; pcre:"/\.(exe|dll|scr|ps1|hta|vbs|bat)(\?|$)/i"; classtype:policy-violation; metadata:mitre_technique T1105; sid:1000030; rev:1;)
+
+# T1105 - Windows PE file (MZ header) delivered over HTTP
+alert http any any -> $HOME_NET any (msg:"LAB PE executable downloaded over HTTP"; flow:established,to_client; file.data; content:"MZ"; depth:2; classtype:policy-violation; metadata:mitre_technique T1105; sid:1000031; rev:1;)

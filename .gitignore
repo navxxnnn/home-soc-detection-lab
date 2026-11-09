@@ -1,0 +1,38 @@
+# Secrets
+.env
+*.env
+secrets/
+*.key
+*.pem
+*.p12
+*.pfx
+credentials*
+*token*
+
+# VM and disk images
+*.ova
+*.ovf
+*.vmdk
+*.vdi
+*.vhd
+*.vhdx
+*.iso
+*.qcow2
+
+# Large / raw captures (commit only small sanitized samples in pcaps/)
+*.pcapng
+pcaps/raw/
+*.log.gz
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.pytest_cache/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

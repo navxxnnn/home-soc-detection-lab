@@ -1,0 +1,2 @@
+# Scripts use only the Python standard library. pytest is needed for tests.
+pytest>=7
