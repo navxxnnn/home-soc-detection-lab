@@ -4,7 +4,7 @@
 |-------|-------|
 | Report ID | IR-03 |
 | Date (UTC) | YYYY-MM-DD |
-| Analyst | YOUR NAME |
+| Analyst | Naveen Kumar H |
 | Severity | Low / Medium / High |
 | MITRE ATT&CK | T1071 - Application Layer Protocol |
 | Status | Closed (lab simulation) |

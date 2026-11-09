@@ -2,7 +2,7 @@ title: Successful RDP Logon From Attacker Subnet
 id: 7c1e4f6a-2b3d-4c5e-8f90-1a2b3c4d5e04
 status: experimental
 description: Successful RDP logon (type 10) originating from the lab attacker network.
-author: YOUR NAME
+author: Naveen Kumar H
 date: 2026-01-01
 tags:
     - attack.lateral-movement

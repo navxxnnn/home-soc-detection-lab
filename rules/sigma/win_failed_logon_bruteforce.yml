@@ -4,7 +4,7 @@ status: experimental
 description: >
     Failed logons over the network (type 3) or RDP (type 10). Alert in the SIEM when
     more than 10 events share the same IpAddress within 5 minutes.
-author: YOUR NAME
+author: Naveen Kumar H
 date: 2026-01-01
 tags:
     - attack.credential-access

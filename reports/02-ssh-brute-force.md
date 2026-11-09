@@ -4,7 +4,7 @@
 |-------|-------|
 | Report ID | IR-02 |
 | Date (UTC) | YYYY-MM-DD |
-| Analyst | YOUR NAME |
+| Analyst | Naveen Kumar H |
 | Severity | Low / Medium / High |
 | MITRE ATT&CK | T1110 - Brute Force |
 | Status | Closed (lab simulation) |

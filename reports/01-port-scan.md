@@ -4,7 +4,7 @@
 |-------|-------|
 | Report ID | IR-01 |
 | Date (UTC) | YYYY-MM-DD |
-| Analyst | YOUR NAME |
+| Analyst | Naveen Kumar H |
 | Severity | Low / Medium / High |
 | MITRE ATT&CK | T1046 - Network Service Discovery |
 | Status | Closed (lab simulation) |

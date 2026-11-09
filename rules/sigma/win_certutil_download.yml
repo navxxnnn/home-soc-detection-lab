@@ -2,7 +2,7 @@ title: Certutil Used to Download a File
 id: 7c1e4f6a-2b3d-4c5e-8f90-1a2b3c4d5e06
 status: experimental
 description: certutil.exe with -urlcache or -verifyctl used to fetch remote content (living-off-the-land download).
-author: YOUR NAME
+author: Naveen Kumar H
 date: 2026-01-01
 tags:
     - attack.command-and-control

@@ -4,7 +4,7 @@
 |-------|-------|
 | Report ID | IR-00X |
 | Date (UTC) | YYYY-MM-DD |
-| Analyst | YOUR NAME |
+| Analyst | Naveen Kumar H |
 | Severity | Low / Medium / High |
 | MITRE ATT&CK | Txxxx - Name |
 | Status | Closed (lab simulation) |
